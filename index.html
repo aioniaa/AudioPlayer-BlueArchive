@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-color: rgb(34, 34, 59); */
+            background: url('./images/EncroachedSky.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(50);
+            transition: all .5s;
+        }
+
+        #wrapper {
+            /* border: 1px solid white; */
+            width: 200px;
+            height: 400px;
+            border-radius: 10px;
+            background: rgba( 0, 198, 255, 0.1 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 10px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 10px;
+            /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+        }
+
+        /* 标题定位 */
+        #text {
+            margin-top: 20px;
+            line-height: normal;
+        }
+
+        /* BlueArchive */
+        #text .title {
+            text-align: center;
+            /* margin-top: 20px; */
+            /* border: 1px solid red; */
+            color: rgba(255, 255, 255, .7);
+            font-size: 10px;
+            /* border-radius: 10px 10px 0 0; */
+        }
+
+        /* 歌曲标题 */
+        #text .musicTitle {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            padding-top: 5px;
+            font-size: 14px;
+            /* border: 1px solid green; */
+        }
+
+        /* 歌曲封面图 */
+        .image {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            border: 1px solid white;
+        }
+
+        /* 列表/喜欢/添加到播放列表 */
+        .likeList {
+            display: flex;
+            margin: auto;
+            margin-top: 10px;
+            justify-content: space-between;
+            color: #fff;
+            /* border: 1px solid white; */
+            width: 150px;
+        }
+
+        .iconfont {
+            cursor: pointer;
+        }
+
+
+        .music_progress {
+            width: 150px;
+            margin: auto;
+            margin-top: 10px
+        }
+
+        .music_progress .music_progress_main {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-size: 6px;
+        }
+
+        /* 进度条底图 */
+        .music_progress .music_progress_bar {
+            width: 70%;
+            height: 3px;
+
+            background-color: rgba(168, 168, 168, .2);
+            border-radius: 10px;
+            margin-top: 2px;
+            backdrop-filter: blur( 10px );
+            cursor: pointer;
+        }
+
+        /* 进度条进度 */
+        .music_progress_bar .music_progress_line {
+            width: 0%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+
+        .controler {
+            display: flex;
+            margin: auto;
+            margin-top: 10px;
+            padding-left: 2px;
+            justify-content: space-between;
+            color: #fff;
+            /* border: 1px solid white; */
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+        }
+
+        .controler span:nth-child(2) {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="text">
+            <p class="title">Blue Archive</p>
+            <p class="musicTitle"></p>
+        </div>
+
+        <div class="image">
+            <img src="images/EncroachedSky.jpg" alt="">
+        </div>
+
+        <div class="likeList">
+            <span class="iconfont icon-liebiao"></span>
+            <span class="iconfont icon-aixin"></span>
+            <span class="iconfont icon-jiahao"></span>
+        </div>
+
+        <div class="music_progress">
+            <div class="music_progress_main">
+                <div class="current">00:00</div>
+                <div class="music_progress_bar">
+                    <div class="music_progress_line"></div>
+                </div>
+                <div class="duration">01:59</div>
+            </div>
+            <audio id="main-audio" src=""></audio>
+        </div>
+
+        <div class="controler">
+            <span class="iconfont icon-Asong prev"></span>
+            <span id="play-pause" class="iconfont icon-bofang playIcon"></span>
+            <span class="iconfont icon-Nextsong next"></span>
+        </div>
+    </div>
+
+    <script src="js/musicList.js"></script>
+    <script src="js/controler.js"></script>
+</body>
+</html>
