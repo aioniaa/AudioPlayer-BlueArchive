@@ -2,6 +2,7 @@ const wrapper = document.querySelector("#wrapper"),
 mainAudio = document.querySelector("#main-audio"),
 musicName = document.querySelector("#text>.musicTitle"),
 playPauseBtn = document.querySelector(".playIcon"),
+likeBtn = document.querySelector(".likeIcon"),
 prevBtn = document.querySelector(".prev"),
 nextBtn = document.querySelector(".next"),
 progressBar = document.querySelector(".music_progress_line");
@@ -34,7 +35,11 @@ playPauseBtn.addEventListener('click', function() {
 var iconContainer = document.querySelector('.controler');
 let icon = iconContainer.querySelector('.playIcon');
 
+var likeContainer = document.querySelector('.likeList');
+let like = likeContainer.querySelector('.likeIcon')
+
 var isPlay = true;
+let isLike = true;
 
 // 图标切换控制
 document.addEventListener('DOMContentLoaded', function() {
@@ -51,6 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
             mainAudio.pause();
         }
         isPlay = !isPlay; // 切换状态
+    })
+
+    likeBtn.addEventListener('click', function() {
+        if (isLike) {
+            // 切换到已喜欢图标
+            like.classList.remove('icon-aixin');
+            like.classList.add('icon-keaide');
+        } else {
+            // 切换回未喜欢图标
+            like.classList.remove('icon-keaide');
+            like.classList.add('icon-aixin');
+        }
+        isLike = !isLike; // 切换状态
     })
 })
 
