@@ -2,7 +2,7 @@
 音频播放器-碧蓝档案
 
 ## 项目灵感
-来源于youtuber@ani_hero的视频（https://www.youtube.com/@ani_hero作者YouTube个人主页）
+来源于youtuber@ani_hero的视频（https://www.youtube.com/ @ani_hero作者YouTube个人主页）
 
 ## 已完成的功能：
 1.播放、暂停
