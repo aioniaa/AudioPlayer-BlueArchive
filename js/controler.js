@@ -32,17 +32,20 @@ playPauseBtn.addEventListener('click', function() {
     }
 })
 
+// 获取播放键的容器
 var iconContainer = document.querySelector('.controler');
 let icon = iconContainer.querySelector('.playIcon');
-
+// 获取喜欢的容器
 var likeContainer = document.querySelector('.likeList');
 let like = likeContainer.querySelector('.likeIcon')
 
+// 设定初始值
 var isPlay = true;
 let isLike = true;
 
 // 图标切换控制
 document.addEventListener('DOMContentLoaded', function() {
+    // 切换播放暂停图标
     playPauseBtn.addEventListener('click', function() {
         if (isPlay) {
             // 切换到暂停图标
@@ -58,13 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
         isPlay = !isPlay; // 切换状态
     })
 
+    // 切换喜欢图标
     likeBtn.addEventListener('click', function() {
         if (isLike) {
             // 切换到已喜欢图标
             like.classList.remove('icon-aixin');
             like.classList.add('icon-keaide');
         } else {
-            // 切换回未喜欢图标
+            // 切换回不喜欢图标
             like.classList.remove('icon-keaide');
             like.classList.add('icon-aixin');
         }
